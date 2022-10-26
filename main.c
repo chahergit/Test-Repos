@@ -1,23 +1,24 @@
 /**
-  ******************************************************************************
+  **************************************************************************
   * @file    main.c
-  * @author  Mouadh Dahech
-  * @brief   How to develop structured code 
+  * @author  CHAHER KHLIFI
+  * @brief   Macros 
   * @version V1.0.0
-  * @date    16-10-2022
+  * @date    26-10-2022
   *****************************************************************************/
 /* Includes ------------------------------------------------------------------*/
-
 /* Macros --------------------------------------------------------------------*/
-#define SOM
-#define MUL
-#define INTEL
-//#define OTHERS
 
+//#define INTEL
+ //variable declaration
+ int a=10, b=20;
 
+// MACROS functions(SOM, MIN, MUL, MAX)
+#define SOM(a,b)  (a+b)
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+#define MUL(a, b) (a*b)
+#define MAX(a, b) ((a) < (b) ? (b) : (a))
 /* Private function prototypes -----------------------------------------------*/
-static int sum (int a , int b);
-static int mul (int a , int b);
 /* Private functions ---------------------------------------------------------*/
 
 /**
@@ -26,32 +27,26 @@ static int mul (int a , int b);
   * @retval None
   */
 int main(void)
-{
-#ifndef SOM
-int resultsum = sum(3,4);
-
+{ int ResultSum, ResultMin, ResultMul, ResultMax; 
+  // Define MACRO SOM:
+#ifdef SOM 
+      ResultSum = SOM(a,b);
 #endif
-#ifndef MUL
-
-int resultmul = mul(3,4);
+  // Define MACRO MIN:
+#ifdef MIN
+      ResultMin = MIN(a,b);
 #endif
-  while (1)
+     // Define MACRO MUL:
+#ifdef MUL
+      ResultMul = MUL(a,b);
+#endif
+     // Define MACRO MAX:
+#ifdef MAX
+      ResultMax = MAX(a,b);
+#endif     
+  while(1)
   {
   }
 }
-#ifndef SOM
-
-   static int sum (int a , int b)
- {
-   return(a+b);
- }
-#endif
-#ifndef MUL
-  static int mul (int a , int b)
- {
-   return(a*b);
- }
-#endif
-
 
 /**************************************END OF FILE**************************************/
